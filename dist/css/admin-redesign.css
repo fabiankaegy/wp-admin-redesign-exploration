@@ -641,6 +641,11 @@ ul#adminmenu > li.current > a.current::after {
 					width: 100%;
 				}
 
+.theme-overlay .theme-wrap {
+		inset-block-end: max(3%, calc(var(--admin-redesign-footer-height) + 16px));
+		inset-inline-start: calc(var(--admin-redesign-sidebar-width) + 20px);
+	}
+
 .wp-filter {
 	border: none;
 	box-shadow: none;
