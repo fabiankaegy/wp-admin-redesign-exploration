@@ -44,6 +44,10 @@ body {
 	background-color: var(--admin-redesign-surface-dark-primary) !important;
 }
 
+body.update-php {
+		background-color: var(--admin-redesign-surface-light-primary) !important;
+	}
+
 *,
 *::before,
 *::after {
