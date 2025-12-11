@@ -199,6 +199,14 @@ Screenshots captured from actual WP Admin pages at 8x resolution.
 | Users list table | <img src="./images/real/table-users-list.png" alt="Users list table" width="1198" height="133"> |
 | Plugins list table | <img src="./images/real/table-plugins-list.png" alt="Plugins list table" width="1198" height="187"> |
 
+## Figma Design Reference
+
+### Site Editor Table (DataViews)
+
+The Site Editor table pattern shows the target visual direction for list tables.
+
+<img src="./images/figma/SiteEditorTable.png" alt="Site Editor Table from Figma" width="926" height="737">
+
 ## Design specifications from Figma
 
 ### Row densities

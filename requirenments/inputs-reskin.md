@@ -207,6 +207,10 @@ Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg
 | RadioControl | <img src="./images/storybook/input-radio.png" alt="RadioControl" width="768" height="96"> |
 | ToggleControl | <img src="./images/storybook/input-toggle.png" alt="ToggleControl" width="768" height="16"> |
 
+## Figma Design Reference
+
+<img src="./images/figma/SelectControl.png" alt="SelectControl from Figma" width="1604" height="132">
+
 ## Design specifications from Figma
 
 **Figma reference:** [Text Input component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=3343-36298)

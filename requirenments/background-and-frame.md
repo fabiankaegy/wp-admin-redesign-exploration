@@ -36,6 +36,22 @@ The global background and the admin frame (admin menu and admin bar) define the 
 
 <img src="./images/real/background-wpcontent.png" alt="WP Content area showing background" width="1240" height="935">
 
+## Figma Design Reference
+
+### Admin Frame
+
+<img src="./images/figma/frame.png" alt="Admin frame from Figma" width="1296" height="838">
+
+### Site Editor Reference
+
+The Site Editor provides a reference for the target visual direction.
+
+<img src="./images/figma/SiteEditor.png" alt="Site Editor" width="926" height="737">
+
+### Site Editor Preview
+
+<img src="./images/figma/SiteEditorPreview.png" alt="Site Editor Preview" width="926" height="737">
+
 ## Design specifications from Figma
 
 ### Global background
