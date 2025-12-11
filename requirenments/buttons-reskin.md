@@ -104,6 +104,16 @@ Core selectors that must remain supported include:
 | Hero | <img src="./images/button-hero.png" alt="Hero button" width="152" height="47"> |
 | Disabled | <img src="./images/button-disabled.png" alt="Disabled button" width="76" height="31"> |
 
+## Real-world examples
+
+Screenshots captured from actual WP Admin pages at 8x resolution.
+
+| Context | Screenshot |
+|---------|------------|
+| Settings page submit | <img src="./images/real/button-primary-settings.png" alt="Primary button on Settings" width="109" height="31"> |
+| Quick Draft save | <img src="./images/real/button-primary-quickdraft.png" alt="Primary button in Quick Draft" width="87" height="31"> |
+| Bulk actions apply | <img src="./images/real/button-secondary-bulk.png" alt="Secondary button for bulk actions" width="57" height="31"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Button component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16507-33913)

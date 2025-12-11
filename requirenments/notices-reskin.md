@@ -108,6 +108,14 @@ Reskin admin notices without markup changes:
 | Warning | <img src="./images/notice-warning.png" alt="Warning notice" width="1156" height="41"> |
 | Error | <img src="./images/notice-error.png" alt="Error notice" width="1156" height="42"> |
 
+## Real-world examples
+
+Screenshots captured from actual WP Admin pages at 8x resolution.
+
+| Context | Screenshot |
+|---------|------------|
+| Settings saved success | <img src="./images/real/notice-success-settings.png" alt="Success notice after saving settings" width="1198" height="42"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Notice component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=15877-6195)

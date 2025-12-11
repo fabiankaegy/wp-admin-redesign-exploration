@@ -146,6 +146,18 @@ Reskin container components without markup changes:
 | Postbox header | <img src="./images/card-postbox-header.png" alt="Postbox header" width="1196" height="60"> |
 | Dashboard widget | <img src="./images/card-dashboard.png" alt="Dashboard widget" width="400" height="222"> |
 
+## Real-world examples
+
+Screenshots captured from actual WP Admin pages at 8x resolution.
+
+| Context | Screenshot |
+|---------|------------|
+| Quick Draft widget (Dashboard) | <img src="./images/real/card-quickdraft.png" alt="Quick Draft widget" width="598" height="283"> |
+| At a Glance widget (Dashboard) | <img src="./images/real/card-ataglance.png" alt="At a Glance widget" width="585" height="145"> |
+| Activity widget (Dashboard) | <img src="./images/real/card-activity.png" alt="Activity widget" width="585" height="302"> |
+| Plugin card (Plugins > Add New) | <img src="./images/real/card-plugin.png" alt="Plugin card" width="591" height="262"> |
+| Theme card (Appearance > Themes) | <img src="./images/real/card-theme.png" alt="Theme card" width="367" height="294"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Card component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16532-44253)

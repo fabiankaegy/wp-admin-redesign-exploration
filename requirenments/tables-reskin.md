@@ -181,6 +181,24 @@ Reskin tables without markup changes:
 | Subsubsub filters | <img src="./images/table-subsubsub.png" alt="Subsubsub" width="392" height="27"> |
 | Checkbox column | <img src="./images/table-checkbox-column.png" alt="Checkbox column" width="34" height="38"> |
 
+## Real-world examples
+
+Screenshots captured from actual WP Admin pages at 8x resolution.
+
+| Context | Screenshot |
+|---------|------------|
+| Posts list table | <img src="./images/real/table-posts-list.png" alt="Posts list table" width="1198" height="1292"> |
+| Table header (Posts) | <img src="./images/real/table-header-posts.png" alt="Table header" width="1196" height="37"> |
+| Table row (Posts) | <img src="./images/real/table-row-posts.png" alt="Table row" width="1196" height="61"> |
+| Table navigation (Posts) | <img src="./images/real/table-nav-posts.png" alt="Table navigation" width="1198" height="36"> |
+| Subsubsub filters (Posts) | <img src="./images/real/table-subsubsub-posts.png" alt="Subsubsub filters" width="156" height="27"> |
+| Pagination (Posts) | <img src="./images/real/table-pagination-posts.png" alt="Pagination" width="260" height="31"> |
+| Bulk actions (Posts) | <img src="./images/real/table-bulk-actions-posts.png" alt="Bulk actions" width="206" height="31"> |
+| Form table (Settings) | <img src="./images/real/table-form-settings.png" alt="Form table" width="1198" height="1352"> |
+| Form table row (Settings) | <img src="./images/real/table-form-row-settings.png" alt="Form table row" width="1198" height="61"> |
+| Users list table | <img src="./images/real/table-users-list.png" alt="Users list table" width="1198" height="133"> |
+| Plugins list table | <img src="./images/real/table-plugins-list.png" alt="Plugins list table" width="1198" height="187"> |
+
 ## Design specifications from Figma
 
 ### Row densities

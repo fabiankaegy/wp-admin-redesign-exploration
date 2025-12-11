@@ -176,6 +176,22 @@ Common selectors include:
 | File | <img src="./images/input-file.png" alt="File" width="295" height="29"> |
 | Range | <img src="./images/input-range.png" alt="Range" width="129" height="17"> |
 
+## Real-world examples
+
+Screenshots captured from actual WP Admin pages at 8x resolution.
+
+| Context | Screenshot |
+|---------|------------|
+| Site Title (Settings > General) | <img src="./images/real/input-text-sitetitle.png" alt="Site Title text input" width="350" height="31"> |
+| Site URL (Settings > General) | <img src="./images/real/input-url-siteurl.png" alt="Site URL input" width="350" height="31"> |
+| Admin Email (Settings > General) | <img src="./images/real/input-email-admin.png" alt="Admin email input" width="350" height="31"> |
+| Timezone (Settings > General) | <img src="./images/real/input-select-timezone.png" alt="Timezone select" width="222" height="31"> |
+| Posts per page (Settings > Reading) | <img src="./images/real/input-number-posts.png" alt="Posts per page number input" width="65" height="31"> |
+| Checkbox (Settings > Discussion) | <img src="./images/real/input-checkbox-discussion.png" alt="Checkbox" width="16" height="17"> |
+| Radio button (Settings > Reading) | <img src="./images/real/input-radio-reading.png" alt="Radio button" width="16" height="17"> |
+| Moderation keys (Settings > Discussion) | <img src="./images/real/input-textarea-moderation.png" alt="Textarea for moderation keys" width="959" height="207"> |
+| Search box (Posts) | <img src="./images/real/input-search-posts.png" alt="Search box on Posts" width="284" height="31"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Text Input component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=3343-36298)
