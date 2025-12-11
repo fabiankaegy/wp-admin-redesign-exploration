@@ -99,17 +99,14 @@ Reskin admin notices without markup changes:
 
 ## Current WP Admin notices
 
-![Current WP Admin notices](./images/section-notices.png)
-
 ### Individual notice components
 
 | Type | Screenshot |
 |------|------------|
-| Info | ![Info notice](./images/notice-info.png) |
-| Success | ![Success notice](./images/notice-success.png) |
-| Warning | ![Warning notice](./images/notice-warning.png) |
-| Error | ![Error notice](./images/notice-error.png) |
-| Dismiss button | ![Dismiss button](./images/notice-dismiss.png) |
+| Info | <img src="./images/notice-info.png" alt="Info notice" width="1156" height="42"> |
+| Success | <img src="./images/notice-success.png" alt="Success notice" width="1156" height="41"> |
+| Warning | <img src="./images/notice-warning.png" alt="Warning notice" width="1156" height="41"> |
+| Error | <img src="./images/notice-error.png" alt="Error notice" width="1156" height="42"> |
 
 ## Design specifications from Figma
 

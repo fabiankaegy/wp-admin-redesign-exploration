@@ -138,15 +138,13 @@ Reskin container components without markup changes:
 
 ## Current WP Admin cards
 
-![Current WP Admin cards](./images/section-cards.png)
-
 ### Individual card components
 
 | Component | Screenshot |
 |-----------|------------|
-| Postbox | ![Postbox](./images/card-postbox.png) |
-| Postbox header | ![Postbox header](./images/card-postbox-header.png) |
-| Dashboard widget | ![Dashboard widget](./images/card-dashboard.png) |
+| Postbox | <img src="./images/card-postbox.png" alt="Postbox" width="1198" height="161"> |
+| Postbox header | <img src="./images/card-postbox-header.png" alt="Postbox header" width="1196" height="60"> |
+| Dashboard widget | <img src="./images/card-dashboard.png" alt="Dashboard widget" width="400" height="222"> |
 
 ## Design specifications from Figma
 

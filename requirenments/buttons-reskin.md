@@ -90,21 +90,19 @@ Core selectors that must remain supported include:
 
 ## Current WP Admin buttons
 
-![Current WP Admin buttons](./images/section-buttons.png)
-
 ### Individual button components
 
 | Component | Screenshot |
 |-----------|------------|
-| Primary | ![Primary button](./images/button-primary.png) |
-| Secondary | ![Secondary button](./images/button-secondary.png) |
-| Default | ![Default button](./images/button-default.png) |
-| Link | ![Link button](./images/button-link.png) |
-| Delete Link | ![Delete link button](./images/button-link-delete.png) |
-| Large | ![Large button](./images/button-large.png) |
-| Small | ![Small button](./images/button-small.png) |
-| Hero | ![Hero button](./images/button-hero.png) |
-| Disabled | ![Disabled button](./images/button-disabled.png) |
+| Primary | <img src="./images/button-primary.png" alt="Primary button" width="113" height="31"> |
+| Secondary | <img src="./images/button-secondary.png" alt="Secondary button" width="131" height="31"> |
+| Default | <img src="./images/button-default.png" alt="Default button" width="110" height="31"> |
+| Link | <img src="./images/button-link.png" alt="Link button" width="69" height="31"> |
+| Delete Link | <img src="./images/button-link-delete.png" alt="Delete link button" width="91" height="31"> |
+| Large | <img src="./images/button-large.png" alt="Large button" width="111" height="33"> |
+| Small | <img src="./images/button-small.png" alt="Small button" width="47" height="27"> |
+| Hero | <img src="./images/button-hero.png" alt="Hero button" width="152" height="47"> |
+| Disabled | <img src="./images/button-disabled.png" alt="Disabled button" width="76" height="31"> |
 
 ## Design specifications from Figma
 

@@ -168,20 +168,18 @@ Reskin tables without markup changes:
 
 ## Current WP Admin tables
 
-![Current WP Admin tables](./images/section-tables.png)
-
 ### Individual table components
 
 | Component | Screenshot |
 |-----------|------------|
-| Table header | ![Table header](./images/table-header.png) |
-| Table row | ![Table row](./images/table-row.png) |
-| Form table row | ![Form table row](./images/table-form-row.png) |
-| Table navigation | ![Table nav](./images/table-nav.png) |
-| Pagination | ![Pagination](./images/table-pagination.png) |
-| Bulk actions | ![Bulk actions](./images/table-bulk-actions.png) |
-| Subsubsub filters | ![Subsubsub](./images/table-subsubsub.png) |
-| Checkbox column | ![Checkbox column](./images/table-checkbox-column.png) |
+| Table header | <img src="./images/table-header.png" alt="Table header" width="1196" height="38"> |
+| Table row | <img src="./images/table-row.png" alt="Table row" width="1196" height="61"> |
+| Form table row | <img src="./images/table-form-row.png" alt="Form table row" width="1156" height="86"> |
+| Table navigation | <img src="./images/table-nav.png" alt="Table nav" width="1198" height="36"> |
+| Pagination | <img src="./images/table-pagination.png" alt="Pagination" width="260" height="31"> |
+| Bulk actions | <img src="./images/table-bulk-actions.png" alt="Bulk actions" width="198" height="31"> |
+| Subsubsub filters | <img src="./images/table-subsubsub.png" alt="Subsubsub" width="392" height="27"> |
+| Checkbox column | <img src="./images/table-checkbox-column.png" alt="Checkbox column" width="34" height="38"> |
 
 ## Design specifications from Figma
 

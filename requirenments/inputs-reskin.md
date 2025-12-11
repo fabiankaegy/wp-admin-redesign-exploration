@@ -151,32 +151,30 @@ Common selectors include:
 
 ## Current WP Admin inputs
 
-![Current WP Admin inputs](./images/section-inputs.png)
-
 ### Individual input components
 
 | Component | Screenshot |
 |-----------|------------|
-| Text input | ![Text input](./images/input-text.png) |
-| Large text | ![Large text](./images/input-text-large.png) |
-| Small text | ![Small text](./images/input-text-small.png) |
-| Disabled | ![Disabled](./images/input-disabled.png) |
-| Readonly | ![Readonly](./images/input-readonly.png) |
-| Textarea | ![Textarea](./images/input-textarea.png) |
-| Select | ![Select](./images/input-select.png) |
-| Checkbox | ![Checkbox](./images/input-checkbox.png) |
-| Radio | ![Radio](./images/input-radio.png) |
-| Search | ![Search](./images/input-search.png) |
-| URL | ![URL](./images/input-url.png) |
-| Email | ![Email](./images/input-email.png) |
-| Number | ![Number](./images/input-number.png) |
-| Password | ![Password](./images/input-password.png) |
-| Password toggle | ![Password toggle](./images/input-password-toggle.png) |
-| Date | ![Date](./images/input-date.png) |
-| Time | ![Time](./images/input-time.png) |
-| Color | ![Color](./images/input-color.png) |
-| File | ![File](./images/input-file.png) |
-| Range | ![Range](./images/input-range.png) |
+| Text input | <img src="./images/input-text.png" alt="Text input" width="350" height="31"> |
+| Large text | <img src="./images/input-text-large.png" alt="Large text" width="917" height="31"> |
+| Small text | <img src="./images/input-text-small.png" alt="Small text" width="50" height="31"> |
+| Disabled | <img src="./images/input-disabled.png" alt="Disabled" width="350" height="31"> |
+| Readonly | <img src="./images/input-readonly.png" alt="Readonly" width="350" height="31"> |
+| Textarea | <img src="./images/input-textarea.png" alt="Textarea" width="917" height="107"> |
+| Select | <img src="./images/input-select.png" alt="Select" width="139" height="31"> |
+| Checkbox | <img src="./images/input-checkbox.png" alt="Checkbox" width="16" height="17"> |
+| Radio | <img src="./images/input-radio.png" alt="Radio" width="16" height="17"> |
+| Search | <img src="./images/input-search.png" alt="Search" width="172" height="31"> |
+| URL | <img src="./images/input-url.png" alt="URL" width="350" height="31"> |
+| Email | <img src="./images/input-email.png" alt="Email" width="350" height="31"> |
+| Number | <img src="./images/input-number.png" alt="Number" width="65" height="31"> |
+| Password | <img src="./images/input-password.png" alt="Password" width="350" height="31"> |
+| Password toggle | <img src="./images/input-password-toggle.png" alt="Password toggle" width="398" height="18"> |
+| Date | <img src="./images/input-date.png" alt="Date" width="183" height="31"> |
+| Time | <img src="./images/input-time.png" alt="Time" width="118" height="31"> |
+| Color | <img src="./images/input-color.png" alt="Color" width="50" height="28"> |
+| File | <img src="./images/input-file.png" alt="File" width="295" height="29"> |
+| Range | <img src="./images/input-range.png" alt="Range" width="129" height="17"> |
 
 ## Design specifications from Figma
 
