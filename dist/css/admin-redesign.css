@@ -131,7 +131,8 @@ body.block-editor-page.is-fullscreen-mode #wpwrap #wpcontent,
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
 	grid-area: admin-content;
 	height: calc(100dvh - var(--wp-admin--admin-bar--height) - var(--admin-redesign-footer-height));
-	margin: 4px !important;
+
+	margin: 0 !important;
 	overflow-y: scroll;
 }
 
