@@ -149,6 +149,35 @@ Common selectors include:
 - `.wp-pwd`, `.wp-hide-pw` password toggle pattern
 - `.search-box` search form pattern
 
+## Current WP Admin inputs
+
+![Current WP Admin inputs](./images/section-inputs.png)
+
+### Individual input components
+
+| Component | Screenshot |
+|-----------|------------|
+| Text input | ![Text input](./images/input-text.png) |
+| Large text | ![Large text](./images/input-text-large.png) |
+| Small text | ![Small text](./images/input-text-small.png) |
+| Disabled | ![Disabled](./images/input-disabled.png) |
+| Readonly | ![Readonly](./images/input-readonly.png) |
+| Textarea | ![Textarea](./images/input-textarea.png) |
+| Select | ![Select](./images/input-select.png) |
+| Checkbox | ![Checkbox](./images/input-checkbox.png) |
+| Radio | ![Radio](./images/input-radio.png) |
+| Search | ![Search](./images/input-search.png) |
+| URL | ![URL](./images/input-url.png) |
+| Email | ![Email](./images/input-email.png) |
+| Number | ![Number](./images/input-number.png) |
+| Password | ![Password](./images/input-password.png) |
+| Password toggle | ![Password toggle](./images/input-password-toggle.png) |
+| Date | ![Date](./images/input-date.png) |
+| Time | ![Time](./images/input-time.png) |
+| Color | ![Color](./images/input-color.png) |
+| File | ![File](./images/input-file.png) |
+| Range | ![Range](./images/input-range.png) |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Text Input component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=3343-36298)

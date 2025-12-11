@@ -14,6 +14,8 @@ A comprehensive UI Kit page is available in WordPress Develop for visual testing
 
 **Access:** `wp-admin/ui-kit.php` (development environments only)
 
+![UI Kit Overview](./images/ui-kit-full.png)
+
 The UI Kit displays all target components with their actual WordPress markup. This is useful for:
 
 - Visual comparison during styling work
@@ -21,6 +23,28 @@ The UI Kit displays all target components with their actual WordPress markup. Th
 - Checking markup structure before making CSS changes
 - Testing across different admin color schemes
 - Comparing current WP Admin styling against Figma specifications
+
+### Available component screenshots
+
+| Component | Screenshot |
+|-----------|------------|
+| Buttons | [buttons.png](./images/buttons.png) |
+| Inputs | [inputs.png](./images/inputs.png) |
+| Notices | [notices.png](./images/notices.png) |
+| Cards | [cards.png](./images/cards.png) |
+| Tables | [tables.png](./images/tables.png) |
+| Navigation | [navigation.png](./images/navigation.png) |
+| Feedback | [feedback.png](./images/feedback.png) |
+| Typography | [typography.png](./images/typography.png) |
+| Filters | [filters.png](./images/filters.png) |
+| Media | [media.png](./images/media.png) |
+| Misc | [misc.png](./images/misc.png) |
+
+To regenerate screenshots, run:
+
+```bash
+node scripts/capture-screenshots.js
+```
 
 ## Project constraints
 

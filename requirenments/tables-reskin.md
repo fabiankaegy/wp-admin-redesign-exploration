@@ -166,6 +166,23 @@ Reskin tables without markup changes:
 - No changes to column markup or list table PHP.
 - No new CSS custom properties for table tokens.
 
+## Current WP Admin tables
+
+![Current WP Admin tables](./images/section-tables.png)
+
+### Individual table components
+
+| Component | Screenshot |
+|-----------|------------|
+| Table header | ![Table header](./images/table-header.png) |
+| Table row | ![Table row](./images/table-row.png) |
+| Form table row | ![Form table row](./images/table-form-row.png) |
+| Table navigation | ![Table nav](./images/table-nav.png) |
+| Pagination | ![Pagination](./images/table-pagination.png) |
+| Bulk actions | ![Bulk actions](./images/table-bulk-actions.png) |
+| Subsubsub filters | ![Subsubsub](./images/table-subsubsub.png) |
+| Checkbox column | ![Checkbox column](./images/table-checkbox-column.png) |
+
 ## Design specifications from Figma
 
 ### Row densities

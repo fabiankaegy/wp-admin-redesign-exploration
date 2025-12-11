@@ -97,6 +97,20 @@ Reskin admin notices without markup changes:
 - No new CSS custom properties for semantic colors.
 - No changes to notice behavior or dismissal logic.
 
+## Current WP Admin notices
+
+![Current WP Admin notices](./images/section-notices.png)
+
+### Individual notice components
+
+| Type | Screenshot |
+|------|------------|
+| Info | ![Info notice](./images/notice-info.png) |
+| Success | ![Success notice](./images/notice-success.png) |
+| Warning | ![Warning notice](./images/notice-warning.png) |
+| Error | ![Error notice](./images/notice-error.png) |
+| Dismiss button | ![Dismiss button](./images/notice-dismiss.png) |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Notice component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=15877-6195)

@@ -88,6 +88,24 @@ Core selectors that must remain supported include:
 - `.wp-core-ui .button-link-delete`
 - `.wp-core-ui .button[disabled]`
 
+## Current WP Admin buttons
+
+![Current WP Admin buttons](./images/section-buttons.png)
+
+### Individual button components
+
+| Component | Screenshot |
+|-----------|------------|
+| Primary | ![Primary button](./images/button-primary.png) |
+| Secondary | ![Secondary button](./images/button-secondary.png) |
+| Default | ![Default button](./images/button-default.png) |
+| Link | ![Link button](./images/button-link.png) |
+| Delete Link | ![Delete link button](./images/button-link-delete.png) |
+| Large | ![Large button](./images/button-large.png) |
+| Small | ![Small button](./images/button-small.png) |
+| Hero | ![Hero button](./images/button-hero.png) |
+| Disabled | ![Disabled button](./images/button-disabled.png) |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Button component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16507-33913)

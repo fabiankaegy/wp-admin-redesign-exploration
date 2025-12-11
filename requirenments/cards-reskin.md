@@ -136,6 +136,18 @@ Reskin container components without markup changes:
 - No new CSS custom properties for surfaces, borders, or elevation.
 - No changes to markup structure.
 
+## Current WP Admin cards
+
+![Current WP Admin cards](./images/section-cards.png)
+
+### Individual card components
+
+| Component | Screenshot |
+|-----------|------------|
+| Postbox | ![Postbox](./images/card-postbox.png) |
+| Postbox header | ![Postbox header](./images/card-postbox-header.png) |
+| Dashboard widget | ![Dashboard widget](./images/card-dashboard.png) |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Card component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16532-44253)
