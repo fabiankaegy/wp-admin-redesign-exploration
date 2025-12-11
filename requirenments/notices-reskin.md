@@ -116,6 +116,16 @@ Screenshots captured from actual WP Admin pages at 8x resolution.
 |---------|------------|
 | Settings saved success | <img src="./images/real/notice-success-settings.png" alt="Success notice after saving settings" width="1198" height="42"> |
 
+## Gutenberg Design System (Storybook)
+
+Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/?path=/docs/components-notice--docs) showing the target design.
+
+| Variant | Screenshot |
+|---------|------------|
+| Default Notice | <img src="./images/storybook/notice-default.png" alt="Notice Default" width="768" height="40"> |
+| Notice with Actions | <img src="./images/storybook/notice-actions.png" alt="Notice with Actions" width="768" height="92"> |
+| Snackbar | <img src="./images/storybook/snackbar.png" alt="Snackbar" width="768" height="36"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Notice component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=15877-6195)

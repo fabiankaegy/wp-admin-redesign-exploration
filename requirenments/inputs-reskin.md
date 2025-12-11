@@ -192,6 +192,21 @@ Screenshots captured from actual WP Admin pages at 8x resolution.
 | Moderation keys (Settings > Discussion) | <img src="./images/real/input-textarea-moderation.png" alt="Textarea for moderation keys" width="959" height="207"> |
 | Search box (Posts) | <img src="./images/real/input-search-posts.png" alt="Search box on Posts" width="284" height="31"> |
 
+## Gutenberg Design System (Storybook)
+
+Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/?path=/docs/components-textcontrol--docs) showing the target design.
+
+| Component | Screenshot |
+|-----------|------------|
+| TextControl | <img src="./images/storybook/input-text.png" alt="TextControl" width="768" height="40"> |
+| TextareaControl | <img src="./images/storybook/input-textarea.png" alt="TextareaControl" width="768" height="147"> |
+| NumberControl | <img src="./images/storybook/input-number.png" alt="NumberControl" width="768" height="98"> |
+| SearchControl | <img src="./images/storybook/input-search.png" alt="SearchControl" width="768" height="63"> |
+| SelectControl | <img src="./images/storybook/input-select.png" alt="SelectControl" width="768" height="64"> |
+| CheckboxControl | <img src="./images/storybook/input-checkbox.png" alt="CheckboxControl" width="768" height="39"> |
+| RadioControl | <img src="./images/storybook/input-radio.png" alt="RadioControl" width="768" height="96"> |
+| ToggleControl | <img src="./images/storybook/input-toggle.png" alt="ToggleControl" width="768" height="16"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Text Input component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=3343-36298)

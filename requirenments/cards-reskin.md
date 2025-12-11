@@ -158,6 +158,16 @@ Screenshots captured from actual WP Admin pages at 8x resolution.
 | Plugin card (Plugins > Add New) | <img src="./images/real/card-plugin.png" alt="Plugin card" width="591" height="262"> |
 | Theme card (Appearance > Themes) | <img src="./images/real/card-theme.png" alt="Theme card" width="367" height="294"> |
 
+## Gutenberg Design System (Storybook)
+
+Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/?path=/docs/components-card--docs) showing the target design.
+
+| Component | Screenshot |
+|-----------|------------|
+| Card | <img src="./images/storybook/card-default.png" alt="Card" width="768" height="868"> |
+| Panel | <img src="./images/storybook/panel.png" alt="Panel" width="768" height="60"> |
+| Surface | <img src="./images/storybook/surface.png" alt="Surface" width="768" height="52"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Card component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16532-44253)

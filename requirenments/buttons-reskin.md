@@ -114,6 +114,19 @@ Screenshots captured from actual WP Admin pages at 8x resolution.
 | Quick Draft save | <img src="./images/real/button-primary-quickdraft.png" alt="Primary button in Quick Draft" width="87" height="31"> |
 | Bulk actions apply | <img src="./images/real/button-secondary-bulk.png" alt="Secondary button for bulk actions" width="57" height="31"> |
 
+## Gutenberg Design System (Storybook)
+
+Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg/?path=/docs/components-button--docs) showing the target design.
+
+| Variant | Screenshot |
+|---------|------------|
+| Default | <img src="./images/storybook/button-default.png" alt="Button Default" width="768" height="36"> |
+| Primary | <img src="./images/storybook/button-primary.png" alt="Button Primary" width="768" height="36"> |
+| Secondary | <img src="./images/storybook/button-secondary.png" alt="Button Secondary" width="768" height="36"> |
+| Tertiary | <img src="./images/storybook/button-tertiary.png" alt="Button Tertiary" width="768" height="36"> |
+| Link | <img src="./images/storybook/button-link.png" alt="Button Link" width="768" height="18"> |
+| Icon | <img src="./images/storybook/button-icon.png" alt="Button Icon" width="768" height="36"> |
+
 ## Design specifications from Figma
 
 **Figma reference:** [Button component](https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System?node-id=16507-33913)
