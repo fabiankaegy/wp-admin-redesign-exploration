@@ -14,8 +14,6 @@ A comprehensive UI Kit page is available in WordPress Develop for visual testing
 
 **Access:** `wp-admin/ui-kit.php` (development environments only)
 
-![UI Kit Overview](./images/ui-kit-full.png)
-
 The UI Kit displays all target components with their actual WordPress markup. This is useful for:
 
 - Visual comparison during styling work
