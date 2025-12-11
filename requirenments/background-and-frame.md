@@ -18,6 +18,24 @@ The global background and the admin frame (admin menu and admin bar) define the 
 - No site editor style sidebar architecture changes that require markup.
 - No new CSS custom properties for neutrals or surfaces.
 
+## Current WP Admin frame
+
+### Full dashboard view
+
+<img src="./images/real/frame-dashboard-full.png" alt="Dashboard full view showing admin frame" width="1400" height="900">
+
+### Admin menu
+
+<img src="./images/real/misc-admin-menu.png" alt="Admin menu" width="160" height="512">
+
+### Admin bar
+
+<img src="./images/real/misc-admin-bar.png" alt="Admin bar" width="1400" height="32">
+
+### Content area background
+
+<img src="./images/real/background-wpcontent.png" alt="WP Content area showing background" width="1240" height="935">
+
 ## Design specifications from Figma
 
 ### Global background
