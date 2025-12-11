@@ -4,6 +4,32 @@
 
 The global background and the admin frame (admin menu and admin bar) define the overall feel of wp-admin. Even small changes here can make classic screens feel more cohesive with the rest of WordPress. One thing to keep in mind is that changes in the frame are highly visible and can create strong feedback quickly.
 
+## What is the "Admin Frame"?
+
+The "Admin Frame" refers to the visual appearance of the main sidebar navigation and admin bar. These elements surround every screen in wp-admin and have a significant impact on the overall perceived quality of the interface.
+
+### The current admin
+
+The first approach would be to simply update the spacing, sizing, and component styles without making any changes to the frame itself.
+
+![Current admin with updated components](https://core.trac.wordpress.org/raw-attachment/ticket/64308/CleanShot%202025-11-25%20at%2021.32.07%402x.png)
+
+To some tastes, this feels like an odd interim step that does not fully resolve the discrepancy between modern screens and older screens.
+
+### The Site Editor for comparison
+
+If we compare the classic admin with the Site Editor, there is a noticeable discrepancy between the two visual languages.
+
+![Site Editor](https://core.trac.wordpress.org/raw-attachment/ticket/64308/CleanShot%202025-11-26%20at%2008.49.28%402x.png)
+
+### A modern take on the admin frame
+
+This screenshot shows what the same screen from the first image looks like with a more modern take on the admin frame, inspired by the work already done in the Site Editor.
+
+![Modern admin frame](https://core.trac.wordpress.org/raw-attachment/ticket/64308/CleanShot%202025-11-25%20at%2021.32.27%402x.png)
+
+For more context, see [Trac ticket #64308 comment:1](https://core.trac.wordpress.org/ticket/64308#comment:1).
+
 ## Scope
 
 - Global background color and base page surfaces.
