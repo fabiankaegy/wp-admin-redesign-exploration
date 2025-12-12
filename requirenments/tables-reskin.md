@@ -166,6 +166,17 @@ Reskin tables without markup changes:
 - No changes to column markup or list table PHP.
 - No new CSS custom properties for table tokens.
 
+## Source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`list-tables.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/list-tables.css#L404) | L404 | `.wp-list-table a` links |
+| [`list-tables.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/list-tables.css#L675) | L675 | `.tablenav` navigation |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L430) | L430 | `.subsubsub` filter links |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L464) | L464 | `.widefat` table base styles |
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css#L825) | L825 | `.form-table` styles |
+| [`class-wp-list-table.php`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/includes/class-wp-list-table.php) | - | PHP class (markup reference) |
+
 ## Current WP Admin tables
 
 ### Individual table components

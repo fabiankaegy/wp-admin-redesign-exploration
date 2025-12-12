@@ -136,6 +136,17 @@ Reskin container components without markup changes:
 - No new CSS custom properties for surfaces, borders, or elevation.
 - No changes to markup structure.
 
+## Source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L2086) | L2086 | `.postbox-container` |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L2145) | L2145 | `.postbox-header` |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L2202) | L2202 | `.postbox` base styles |
+| [`dashboard.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/dashboard.css#L33) | L33 | `#dashboard-widgets .postbox-container` |
+| [`list-tables.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/list-tables.css#L1473) | L1473 | `.plugin-card` styles |
+| [`themes.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/themes.css#L61) | L61 | `.theme-browser .theme` |
+
 ## Current WP Admin cards
 
 ### Individual card components

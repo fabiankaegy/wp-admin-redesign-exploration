@@ -88,6 +88,17 @@ Core selectors that must remain supported include:
 - `.wp-core-ui .button-link-delete`
 - `.wp-core-ui .button[disabled]`
 
+### Source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`colors/_admin.scss`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/colors/_admin.scss#L40) | L40 | `.button-link` styles |
+| [`colors/_admin.scss`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/colors/_admin.scss#L111) | L111 | `.button` color definitions |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L135) | L135 | `.button .screen-reader-text` |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L1736) | L1736 | `.button-primary.updating-message` |
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css) | - | Submit button in form contexts |
+| [`login.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/login.css) | - | Login form button styles |
+
 ## Current WP Admin buttons
 
 ### Individual button components

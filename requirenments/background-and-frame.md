@@ -136,11 +136,21 @@ $global-bg: #f0f0f0; // gray-100
 ### Admin menu and admin bar
 
 - Use existing selectors in:
-  - `src/wp-admin/css/admin-menu.css`
-  - `src/wp-includes/css/admin-bar.css`
+  - [`src/wp-admin/css/admin-menu.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/admin-menu.css)
+  - [`src/wp-includes/css/admin-bar.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/css/admin-bar.css)
 - Align spacing to 4px grid.
 - Use `var(--wp-admin-theme-color)` for active accents.
 - Consider standardizing menu item height to 40px or 48px.
+
+### Related source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`admin-menu.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/admin-menu.css#L1) | L1 | `#adminmenu` sidebar styles |
+| [`admin-bar.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-includes/css/admin-bar.css#L6) | L6 | `#wpadminbar` top bar styles |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L10) | L10 | `#wpcontent` layout and background |
+| [`colors/_admin.scss`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/colors/_admin.scss) | - | Color scheme definitions |
+| [`colors/_variables.scss`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/colors/_variables.scss) | - | `--wp-admin-theme-color` variable |
 
 ### Accessibility
 

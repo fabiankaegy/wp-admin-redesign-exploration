@@ -97,6 +97,16 @@ Reskin admin notices without markup changes:
 - No new CSS custom properties for semantic colors.
 - No changes to notice behavior or dismissal logic.
 
+## Source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L805) | L805 | `.notice-dismiss:before` icon |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L1416) | L1416 | `.notice` base styles |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L1448) | L1448 | `.notice-alt` variant |
+| [`common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css#L1467) | L1467 | `.notice-dismiss` button |
+| [`dashboard.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/dashboard.css) | - | Dashboard-specific notice styles |
+
 ## Current WP Admin notices
 
 ### Individual notice components

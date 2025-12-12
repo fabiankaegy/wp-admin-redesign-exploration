@@ -136,8 +136,8 @@ Reskin the following without markup changes:
 
 Primary surfaces include:
 
-- `src/wp-admin/css/forms.css`
-- `src/wp-admin/css/common.css` (shared control patterns)
+- [`src/wp-admin/css/forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css)
+- [`src/wp-admin/css/common.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/common.css) (shared control patterns)
 
 Common selectors include:
 
@@ -148,6 +148,17 @@ Common selectors include:
 - `.code`, `.ltr` modifier classes
 - `.wp-pwd`, `.wp-hide-pw` password toggle pattern
 - `.search-box` search form pattern
+
+### Source files
+
+| File | Line | Purpose |
+|------|------|---------|
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css#L34) | L34 | `input[type="text"]` and other text inputs |
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css#L96) | L96 | `input[type="checkbox"]:focus` |
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css#L112) | L112 | `input[type="checkbox"]` base styles |
+| [`forms.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/forms.css#L825) | L825 | `.form-table` styles |
+| [`login.css`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/login.css) | - | Login form input styles |
+| [`colors/_variables.scss`](https://github.com/WordPress/wordpress-develop/blob/trunk/src/wp-admin/css/colors/_variables.scss) | - | `--wp-admin-border-width-focus` |
 
 ## Current WP Admin inputs
 
