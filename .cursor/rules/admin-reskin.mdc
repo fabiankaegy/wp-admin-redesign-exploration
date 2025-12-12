@@ -1,0 +1,313 @@
+---
+alwaysApply: true
+---
+# WP Admin Reskin Guidelines
+
+This rules file provides context for the WordPress 7.0 admin visual reskin project.
+
+## Project Scope
+
+This is a **CSS-only visual refresh** of the WordPress admin. No markup changes, no JavaScript changes, no new functionality.
+
+### What we are doing
+- Updating button, input, notice, card, and table styles
+- Aligning with the WordPress Design System
+- Using existing CSS custom properties from `wp-base-styles`
+- Using Sass for any additional tokenization
+
+### What we are NOT doing
+- Changing HTML markup
+- Adding new CSS custom properties (backward compat concern)
+- Adopting DataViews functionality
+- Restructuring admin layout or navigation
+
+## Available CSS Custom Properties
+
+The `wp-base-styles` stylesheet is loaded on all admin screens and provides these variables per color scheme:
+
+```css
+/* Theme color (accent) */
+--wp-admin-theme-color: #3858e9;           /* Modern scheme example */
+--wp-admin-theme-color--rgb: 56, 88, 233;  /* For rgba() usage */
+--wp-admin-theme-color-darker-10: #2145e6; /* Hover state */
+--wp-admin-theme-color-darker-20: #183ad6; /* Active state */
+
+/* Focus ring */
+--wp-admin-border-width-focus: 2px;        /* 1.5px on retina */
+```
+
+### Usage examples
+
+```css
+/* Primary button background */
+.button-primary {
+  background-color: var(--wp-admin-theme-color);
+}
+
+/* Hover state */
+.button-primary:hover {
+  background-color: var(--wp-admin-theme-color-darker-10);
+}
+
+/* Focus ring */
+.button:focus {
+  box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
+}
+
+/* Semi-transparent using RGB variant */
+.selected-row {
+  background-color: rgba(var(--wp-admin-theme-color--rgb), 0.04);
+}
+```
+
+## Color Schemes
+
+All 8 admin color schemes must be supported. Never hardcode theme colors.
+
+| Scheme | Theme Color |
+|--------|-------------|
+| modern | #3858e9 |
+| light | #0085ba |
+| blue | #096484 |
+| coffee | #46403c |
+| ectoplasm | #523f6d |
+| midnight | #e14d43 |
+| ocean | #627c83 |
+| sunrise | #dd823b |
+
+## Design System Tokens (from Figma)
+
+Do NOT expose these as CSS custom properties. Use Sass variables compiled to static values.
+
+### Grid Units (Spacing)
+
+Based on 4px base unit.
+
+```scss
+$grid-unit-05: 4px;   // Scales/grid unit 05
+$grid-unit-10: 8px;   // Scales/grid unit 10
+$grid-unit-15: 12px;  // Scales/grid unit 15
+$grid-unit-20: 16px;  // Scales/grid unit 20
+$grid-unit-30: 24px;  // Scales/grid unit 30
+$grid-unit-40: 32px;  // Scales/grid unit 40
+$grid-unit-50: 40px;  // Scales/grid unit 50
+$grid-unit-60: 48px;  // Scales/grid unit 60
+$grid-unit-70: 56px;  // Scales/grid unit 70
+```
+
+### Border Radius
+
+```scss
+$radius-xs: 1px;    // radius-xs
+$radius-s: 2px;     // radius-s - Buttons, inputs
+$radius-m: 4px;     // radius-m - Focus rings
+$radius-l: 8px;     // radius-l - Cards
+$radius-30: 12px;   // Radius 30
+$radius-full: 999px; // radius-full - Pills, circles
+```
+
+### Gray Scale
+
+```scss
+$gray-100: #f0f0f0;  // Scales/Grays/gray-100 - Backgrounds, disabled inputs
+$gray-200: #e0e0e0;  // Scales/Grays/gray-200
+$gray-300: #dddddd;  // Scales/Grays/gray-300
+$gray-400: #cccccc;  // Scales/Grays/gray-400 - Disabled borders
+$gray-600: #949494;  // Scales/Grays/gray-600 - Input borders, disabled text
+$gray-700: #757575;  // Scales/Grays/gray-700
+$gray-800: #2f2f2f;  // Scales/Grays/gray-800
+$gray-900: #1e1e1e;  // Scales/Grays/gray-900 - Primary text
+
+$white: #ffffff;     // Scales/Black & White/white
+```
+
+### Theme Colors
+
+```scss
+$theme: #3858e9;              // Scales/Theme/theme
+$theme-darker-10: #2145e6;    // Scales/Theme/theme-darker-10
+$theme-darker-20: #183ad6;    // Scales/Theme/theme-darker-20
+$theme-alpha-04: #3858e90a;   // Scales/Theme/theme-alpha-04 (4% opacity)
+$theme-alpha-08: #3858e914;   // Scales/Theme/theme-alpha-08 (8% opacity)
+
+$brand-9: #4465db;            // Scales/brand-9 - Focus ring color
+```
+
+### Semantic Colors
+
+```scss
+$alert-yellow: #f0b849;  // Scales/Yellow/alert-yellow - Warnings
+$alert-green: #4ab866;   // Scales/Green/alert-green - Success
+$alert-red: #cc1818;     // Scales/Red/alert-red - Errors
+
+$synced-color: #7a00df;  // Scales/Purple/--wp-block-synced-color
+```
+
+### Alias Tokens
+
+```scss
+$text-tertiary: #5d5d5d;       // Alias/text/text-tertiary
+$bg-input: #ffffff;            // Alias/bg/bg-input
+$field-spacing-horizontal: 8px; // Alias/field-spacing-horizontal
+$page-large: 48px;             // Alias/page-large
+$page-small: 24px;             // Alias/page-small
+$checkbox-size: 16px;          // Alias/checkbox
+$radio-size: 16px;             // Alias/radio
+$toggle-width: 32px;           // Alias/toggle-width
+$toggle-height: 16px;          // Alias/toggle-height
+$button-medium-height: 32px;   // Alias/Button medium
+```
+
+### Input States
+
+```scss
+$input-border-default: 1px;    // Input/Default
+$input-border-focus: 1.5px;    // Input/Focus
+```
+
+### Typography Scale
+
+```scss
+// Font sizes
+$font-size-xs: 11px;  // xs
+$font-size-s: 12px;   // s (used for line-height reference)
+$font-size-m: 13px;   // m - Base body text
+$font-size-l: 15px;   // l
+$font-size-xl: 20px;  // xl
+
+// Line heights
+$line-height-xs: 16px; // xs
+$line-height-s: 20px;  // s
+$line-height-m: 24px;  // m
+
+// Font weights
+$font-weight-regular: 400; // Regular
+$font-weight-medium: 500;  // Medium
+```
+
+### Typography Presets
+
+```scss
+// Headings (SF Pro, Medium weight)
+// Heading XL: 20px/24px, weight 500
+// Heading LG: 15px/20px, weight 500
+// Heading MD: 13px/20px, weight 500
+// Heading S:  11px/16px, weight 500
+
+// Body (SF Pro, Regular weight)
+// Body LG: 15px/24px, weight 400
+// Body MD: 13px/20px, weight 400
+// Body SM: 12px/16px, weight 400
+
+// Buttons (SF Pro, Medium weight)
+// Button MD: 13px/20px, weight 500
+// Button SM: 11px/20px, weight 500
+```
+
+### Elevation (Box Shadows)
+
+```scss
+// Elevation X Small
+$elevation-xs: 
+  0 4px 4px rgba(0, 0, 0, 0.01),
+  0 3px 3px rgba(0, 0, 0, 0.02),
+  0 1px 2px rgba(0, 0, 0, 0.02),
+  0 1px 1px rgba(0, 0, 0, 0.03);
+
+// Elevation Small
+$elevation-s:
+  0 8px 8px rgba(0, 0, 0, 0.02),
+  0 1px 2px rgba(0, 0, 0, 0.05);
+
+// Elevation Medium
+$elevation-m:
+  0 16px 16px rgba(0, 0, 0, 0.02),
+  0 4px 5px rgba(0, 0, 0, 0.03),
+  0 2px 3px rgba(0, 0, 0, 0.05);
+
+// Elevation Large
+$elevation-l:
+  0 50px 43px rgba(0, 0, 0, 0.02),
+  0 30px 36px rgba(0, 0, 0, 0.04),
+  0 15px 27px rgba(0, 0, 0, 0.07),
+  0 5px 15px rgba(0, 0, 0, 0.08);
+```
+
+### Modal Sizes
+
+```scss
+$modal-small: 384px;   // Layout/Modal small
+$modal-medium: 512px;  // Layout/Modal medium
+$modal-large: 840px;   // Layout/Modal large
+```
+
+## Component Guidelines
+
+### Buttons
+- Height: 32px (medium), 40px (large)
+- Border radius: 2px
+- Use `var(--wp-admin-theme-color)` for primary
+- Focus ring: `var(--wp-admin-border-width-focus)` width, #4465db color
+
+### Inputs
+- Height: 32px (medium), 40px (large)
+- Border: 1px solid #949494
+- Border radius: 2px
+- Focus: 1.5px inner ring, #4465db
+
+### Notices
+- Left border: 4px
+- Padding: 12px horizontal, 8px vertical
+- Use static semantic colors (not theme color):
+  - Info: #3858e9
+  - Success: #4ab866
+  - Warning: #f0b849
+  - Error: #cc1818
+
+### Cards
+- Background: #ffffff
+- Border: 1px solid rgba(0,0,0,0.1)
+- Border radius: 8px (dashboard), 0 (metaboxes)
+- Padding: 16px (small), 24px (medium)
+
+### Tables
+- Row border: 1px solid rgba(0,0,0,0.1)
+- Hover: subtle tint
+- Selected: rgba(var(--wp-admin-theme-color--rgb), 0.04)
+
+## Key Source Files
+
+When editing styles, work in these files:
+
+| Component | File |
+|-----------|------|
+| Buttons | `src/wp-admin/css/colors/_admin.scss` |
+| Inputs | `src/wp-admin/css/forms.css` |
+| Notices | `src/wp-admin/css/common.css` (L1416) |
+| Cards | `src/wp-admin/css/common.css` (L2202) |
+| Tables | `src/wp-admin/css/list-tables.css` |
+| Admin menu | `src/wp-admin/css/admin-menu.css` |
+| Admin bar | `src/wp-includes/css/admin-bar.css` |
+
+## Testing Requirements
+
+1. Test in at least 2 color schemes (modern + light)
+2. Test at 100% and 200% zoom
+3. Test RTL layout
+4. Verify focus states are visible
+5. Check WCAG AA contrast (4.5:1 text, 3:1 UI)
+
+## Commit Guidelines
+
+- Keep patches small and focused on one component
+- Each patch should be independently revertable
+- Include before/after screenshots in PR descriptions
+- Reference the requirements doc for that component
+
+## Reference Documents
+
+- Requirements: `wp-admin-redesign-exploration/requirenments/`
+- UI Kit page: `wordpress-develop/src/wp-admin/ui-kit.php`
+- Trac ticket: https://core.trac.wordpress.org/ticket/64308
+- Figma: https://www.figma.com/design/804HN2REV2iap2ytjRQ055/WordPress-Design-System
+- Storybook: https://wordpress.github.io/gutenberg/
