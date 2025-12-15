@@ -36,6 +36,10 @@ if ( file_exists( ADMIN_REDESIGN_PATH . 'vendor/autoload.php' ) ) {
 	require_once ADMIN_REDESIGN_PATH . 'vendor/autoload.php';
 }
 
+// Load style overrides to replace core stylesheets with forked versions.
+// This uses the Gutenberg pattern of hooking into wp_default_styles.
+require_once ADMIN_REDESIGN_INC . 'style-overrides.php';
+
 add_filter( 'admin_enqueue_scripts', 'admin_redesign_enqueue_scripts' );
 
 /**

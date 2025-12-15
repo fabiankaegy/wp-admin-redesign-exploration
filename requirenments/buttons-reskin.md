@@ -144,13 +144,16 @@ Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg
 
 ### Button sizes
 
-The design system defines three button sizes. WP Admin currently uses a single size that should map to Medium.
+Gutenberg is transitioning to 40px as the default button size (see `$button-size-next-default-40px` in Gutenberg). This reskin adopts 40px as the new default to align with that direction.
 
-| Size | Height | Min height | Padding |
-|------|--------|------------|---------|
-| Large | 40px | 24px inner | 4px |
-| Medium | 32px | 24px inner | 4px |
-| Small | 24px | - | 4px |
+| Size | Class | Height | line-height | Padding | Use case |
+|------|-------|--------|-------------|---------|----------|
+| Default | `.button` | 40px | 2.92 (38px) | 0 16px | Standard buttons |
+| Compact | `.button-compact` | 32px | 2.31 (30px) | 0 12px | Space-constrained contexts |
+| Small | `.button-small` | 24px | 2 (22px) | 0 8px | Inline or minimal UI |
+| Hero | `.button-hero` | 48px | 3.29 (46px) | 0 36px | Welcome screens, CTAs |
+
+One thing to keep in mind is that the height is achieved via `min-height` combined with `line-height`, not a fixed `height`. This ensures buttons scale properly with browser zoom for accessibility.
 
 ### Typography
 
@@ -243,9 +246,10 @@ One thing to keep in mind is that focus styling is both a usability feature and 
 
 ### Layout and spacing
 
-- Button height should be 32px (Medium) for standard buttons.
-- Inner padding should be 4px on all sides.
-- Border radius should be 2px.
+- Default button height is now 40px (aligned with Gutenberg's next-default-40px).
+- Compact buttons (32px) available via `.button-compact` for space-constrained contexts.
+- Horizontal padding: 16px (default), 12px (compact), 8px (small).
+- Border radius: 2px.
 - Use Sass tokens for all spacing values to maintain consistency.
 
 ### Accessibility requirements

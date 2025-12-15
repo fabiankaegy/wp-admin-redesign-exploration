@@ -155,7 +155,10 @@ $checkbox-size: 16px;          // Alias/checkbox
 $radio-size: 16px;             // Alias/radio
 $toggle-width: 32px;           // Alias/toggle-width
 $toggle-height: 16px;          // Alias/toggle-height
-$button-medium-height: 32px;   // Alias/Button medium
+// Gutenberg is transitioning to 40px as the default button size
+$button-height-default: 40px;  // Default button height (next-default-40px)
+$button-height-compact: 32px;  // Compact button height
+$button-height-small: 24px;    // Small button height
 ```
 
 ### Input States
@@ -244,16 +247,21 @@ $modal-large: 840px;   // Layout/Modal large
 ## Component Guidelines
 
 ### Buttons
-- Height: 32px (medium), 40px (large)
+- Default height: 40px (aligned with Gutenberg's next-default-40px)
+- Compact height: 32px (use `.button-compact` for space-constrained contexts)
+- Small height: 24px
 - Border radius: 2px
 - Use `var(--wp-admin-theme-color)` for primary
-- Focus ring: `var(--wp-admin-border-width-focus)` width, #4465db color
+- Focus ring: Gutenberg-style outer ring using `var(--wp-admin-theme-color)`
+- Primary focus: outer theme color ring + inset white ring for contrast
 
 ### Inputs
-- Height: 32px (medium), 40px (large)
+- Default height: 40px (aligned with Gutenberg's next-default-40px)
+- Compact height: 32px (for space-constrained contexts)
 - Border: 1px solid #949494
 - Border radius: 2px
-- Focus: 1.5px inner ring, #4465db
+- Focus: Gutenberg-style outer ring using `var(--wp-admin-theme-color)`
+- Use `min-height` + `line-height` for sizing (not fixed `height`) for accessibility
 
 ### Notices
 - Left border: 4px

@@ -1,0 +1,275 @@
+{
+  "version": "1.0.0",
+  "coreSourceDir": "src",
+  "lastSyncCommit": "eda8d9d27b129ac48143af7d9c2df595dc172e44",
+  "files": {
+    "src/wp-admin/css/common.css": {
+      "plugin": "core-styles/wp-admin/css/common.css",
+      "handle": "common"
+    },
+    "src/wp-admin/css/common-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/common-rtl.css",
+      "handle": "common"
+    },
+    "src/wp-admin/css/forms.css": {
+      "plugin": "core-styles/wp-admin/css/forms.css",
+      "handle": "forms"
+    },
+    "src/wp-admin/css/forms-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/forms-rtl.css",
+      "handle": "forms"
+    },
+    "src/wp-admin/css/admin-menu.css": {
+      "plugin": "core-styles/wp-admin/css/admin-menu.css",
+      "handle": "admin-menu"
+    },
+    "src/wp-admin/css/admin-menu-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/admin-menu-rtl.css",
+      "handle": "admin-menu"
+    },
+    "src/wp-admin/css/dashboard.css": {
+      "plugin": "core-styles/wp-admin/css/dashboard.css",
+      "handle": "dashboard"
+    },
+    "src/wp-admin/css/dashboard-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/dashboard-rtl.css",
+      "handle": "dashboard"
+    },
+    "src/wp-admin/css/list-tables.css": {
+      "plugin": "core-styles/wp-admin/css/list-tables.css",
+      "handle": "list-tables"
+    },
+    "src/wp-admin/css/list-tables-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/list-tables-rtl.css",
+      "handle": "list-tables"
+    },
+    "src/wp-admin/css/edit.css": {
+      "plugin": "core-styles/wp-admin/css/edit.css",
+      "handle": "edit"
+    },
+    "src/wp-admin/css/edit-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/edit-rtl.css",
+      "handle": "edit"
+    },
+    "src/wp-admin/css/revisions.css": {
+      "plugin": "core-styles/wp-admin/css/revisions.css",
+      "handle": "revisions"
+    },
+    "src/wp-admin/css/revisions-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/revisions-rtl.css",
+      "handle": "revisions"
+    },
+    "src/wp-admin/css/media.css": {
+      "plugin": "core-styles/wp-admin/css/media.css",
+      "handle": "media"
+    },
+    "src/wp-admin/css/media-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/media-rtl.css",
+      "handle": "media"
+    },
+    "src/wp-admin/css/themes.css": {
+      "plugin": "core-styles/wp-admin/css/themes.css",
+      "handle": "themes"
+    },
+    "src/wp-admin/css/themes-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/themes-rtl.css",
+      "handle": "themes"
+    },
+    "src/wp-admin/css/about.css": {
+      "plugin": "core-styles/wp-admin/css/about.css",
+      "handle": "about"
+    },
+    "src/wp-admin/css/about-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/about-rtl.css",
+      "handle": "about"
+    },
+    "src/wp-admin/css/nav-menus.css": {
+      "plugin": "core-styles/wp-admin/css/nav-menus.css",
+      "handle": "nav-menus"
+    },
+    "src/wp-admin/css/nav-menus-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/nav-menus-rtl.css",
+      "handle": "nav-menus"
+    },
+    "src/wp-admin/css/widgets.css": {
+      "plugin": "core-styles/wp-admin/css/widgets.css",
+      "handle": "widgets"
+    },
+    "src/wp-admin/css/widgets-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/widgets-rtl.css",
+      "handle": "widgets"
+    },
+    "src/wp-admin/css/site-icon.css": {
+      "plugin": "core-styles/wp-admin/css/site-icon.css",
+      "handle": "site-icon"
+    },
+    "src/wp-admin/css/site-icon-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/site-icon-rtl.css",
+      "handle": "site-icon"
+    },
+    "src/wp-admin/css/l10n.css": {
+      "plugin": "core-styles/wp-admin/css/l10n.css",
+      "handle": "l10n"
+    },
+    "src/wp-admin/css/l10n-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/l10n-rtl.css",
+      "handle": "l10n"
+    },
+    "src/wp-admin/css/site-health.css": {
+      "plugin": "core-styles/wp-admin/css/site-health.css",
+      "handle": "site-health"
+    },
+    "src/wp-admin/css/site-health-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/site-health-rtl.css",
+      "handle": "site-health"
+    },
+    "src/wp-admin/css/login.css": {
+      "plugin": "core-styles/wp-admin/css/login.css",
+      "handle": "login"
+    },
+    "src/wp-admin/css/login-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/login-rtl.css",
+      "handle": "login"
+    },
+    "src/wp-admin/css/install.css": {
+      "plugin": "core-styles/wp-admin/css/install.css",
+      "handle": "install"
+    },
+    "src/wp-admin/css/install-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/install-rtl.css",
+      "handle": "install"
+    },
+    "src/wp-admin/css/colors/_admin.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/_admin.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/_variables.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/_variables.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/_mixins.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/_mixins.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/modern/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/modern/colors.css",
+      "handle": "colors-modern"
+    },
+    "src/wp-admin/css/colors/modern/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/modern/colors-rtl.css",
+      "handle": "colors-modern"
+    },
+    "src/wp-admin/css/colors/modern/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/modern/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/light/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/light/colors.css",
+      "handle": "colors-light"
+    },
+    "src/wp-admin/css/colors/light/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/light/colors-rtl.css",
+      "handle": "colors-light"
+    },
+    "src/wp-admin/css/colors/light/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/light/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/blue/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/blue/colors.css",
+      "handle": "colors-blue"
+    },
+    "src/wp-admin/css/colors/blue/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/blue/colors-rtl.css",
+      "handle": "colors-blue"
+    },
+    "src/wp-admin/css/colors/blue/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/blue/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/coffee/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/coffee/colors.css",
+      "handle": "colors-coffee"
+    },
+    "src/wp-admin/css/colors/coffee/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/coffee/colors-rtl.css",
+      "handle": "colors-coffee"
+    },
+    "src/wp-admin/css/colors/coffee/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/coffee/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/ectoplasm/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/ectoplasm/colors.css",
+      "handle": "colors-ectoplasm"
+    },
+    "src/wp-admin/css/colors/ectoplasm/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/ectoplasm/colors-rtl.css",
+      "handle": "colors-ectoplasm"
+    },
+    "src/wp-admin/css/colors/ectoplasm/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/ectoplasm/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/midnight/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/midnight/colors.css",
+      "handle": "colors-midnight"
+    },
+    "src/wp-admin/css/colors/midnight/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/midnight/colors-rtl.css",
+      "handle": "colors-midnight"
+    },
+    "src/wp-admin/css/colors/midnight/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/midnight/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/ocean/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/ocean/colors.css",
+      "handle": "colors-ocean"
+    },
+    "src/wp-admin/css/colors/ocean/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/ocean/colors-rtl.css",
+      "handle": "colors-ocean"
+    },
+    "src/wp-admin/css/colors/ocean/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/ocean/colors.scss",
+      "handle": null
+    },
+    "src/wp-admin/css/colors/sunrise/colors.css": {
+      "plugin": "core-styles/wp-admin/css/colors/sunrise/colors.css",
+      "handle": "colors-sunrise"
+    },
+    "src/wp-admin/css/colors/sunrise/colors-rtl.css": {
+      "plugin": "core-styles/wp-admin/css/colors/sunrise/colors-rtl.css",
+      "handle": "colors-sunrise"
+    },
+    "src/wp-admin/css/colors/sunrise/colors.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/sunrise/colors.scss",
+      "handle": null
+    },
+    "src/wp-includes/css/buttons.css": {
+      "plugin": "core-styles/wp-includes/css/buttons.css",
+      "handle": "buttons"
+    },
+    "src/wp-includes/css/buttons-rtl.css": {
+      "plugin": "core-styles/wp-includes/css/buttons-rtl.css",
+      "handle": "buttons"
+    },
+    "src/wp-includes/css/admin-bar.css": {
+      "plugin": "core-styles/wp-includes/css/admin-bar.css",
+      "handle": "admin-bar"
+    },
+    "src/wp-includes/css/admin-bar-rtl.css": {
+      "plugin": "core-styles/wp-includes/css/admin-bar-rtl.css",
+      "handle": "admin-bar"
+    },
+    "src/wp-includes/css/media-views.css": {
+      "plugin": "core-styles/wp-includes/css/media-views.css",
+      "handle": "media-views"
+    },
+    "src/wp-includes/css/media-views-rtl.css": {
+      "plugin": "core-styles/wp-includes/css/media-views-rtl.css",
+      "handle": "media-views"
+    }
+  }
+}

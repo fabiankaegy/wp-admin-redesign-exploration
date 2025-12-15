@@ -11,7 +11,15 @@
 		"test": "10up-toolkit test-unit-jest",
 		"clean-dist": "rm -rf ./dist",
 		"scaffold:block": "cd includes/blocks/ && wp-create-block --no-plugin --template ../../../../bin/create-block-template",
-		"wp-env": "wp-env"
+		"wp-env": "wp-env",
+		"capture:admin-pages": "node scripts/capture-admin-pages.js",
+		"capture:screenshots": "node scripts/capture-screenshots.js",
+		"capture:real": "node scripts/capture-real-screenshots.js",
+		"capture:storybook": "node scripts/capture-storybook-screenshots.js",
+		"sync:init": "bash scripts/init-fork.sh",
+		"sync:update": "bash scripts/sync-from-core.sh",
+		"sync:status": "bash scripts/sync-status.sh",
+		"sync:to-core": "bash scripts/sync-to-core.sh"
 	},
 	"engines": {
 		"node": ">=20.0.0"

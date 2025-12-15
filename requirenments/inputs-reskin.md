@@ -228,12 +228,14 @@ Screenshots from the [Gutenberg Storybook](https://wordpress.github.io/gutenberg
 
 ### Input sizes
 
-| Size | Height | Inner min-height | Horizontal padding | Vertical padding |
-|------|--------|------------------|-------------------|------------------|
-| Large | 40px | 24px | 8px left, 12px right | 8px |
-| Medium | 32px | 24px | 4px | 4px |
+Gutenberg is transitioning to 40px as the default size for interactive elements. This reskin adopts 40px as the new default for inputs to align with that direction.
 
-WP Admin primarily uses a size that maps to Large.
+| Size | Height | line-height | Horizontal padding | Use case |
+|------|--------|-------------|-------------------|----------|
+| Default | 40px | 2.71 (38px) | 0 12px | Standard inputs |
+| Compact | 32px | 2.14 (30px) | 0 8px | Space-constrained contexts |
+
+One thing to keep in mind is that the height is achieved via `min-height` combined with `line-height`, not a fixed `height`. This ensures inputs scale properly with browser zoom for accessibility.
 
 ### Typography
 
@@ -308,9 +310,10 @@ It is recommended to treat focus styling as a shared contract across all control
 
 ### Visual system alignment
 
-- Large inputs: 40px height, 8px/12px horizontal padding.
-- Medium inputs: 32px height, 4px padding.
+- Default inputs: 40px height (aligned with Gutenberg's next-default-40px), 12px horizontal padding.
+- Compact inputs: 32px height for space-constrained contexts, 8px padding.
 - Border radius: 2px for all inputs.
+- Use `min-height` + `line-height` for sizing (not fixed `height`) to support browser zoom.
 - Use Sass tokens for all values.
 
 ### States

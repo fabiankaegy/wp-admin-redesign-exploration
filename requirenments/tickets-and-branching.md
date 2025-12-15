@@ -95,14 +95,15 @@ npm run build
 
 **Scope:**
 - Primary button: theme color background, white text
-- Secondary button: white background, theme color border/text
-- Tertiary/default button: transparent, gray text
-- Link button: theme color text, no background
+- Secondary button: transparent background, theme color border/text
+- Tertiary/default button: transparent, gray border, dark text
+- Link button: theme color text, underline, no background
 - Destructive variants: #cc1818 accent
-- Focus ring: 1.5px #4465db inset
-- Height: 32px (medium)
+- Focus ring: Gutenberg-style outer ring with var(--wp-admin-theme-color)
+- Default height: 40px (aligned with Gutenberg's next-default-40px)
+- New `.button-compact` class: 32px for space-constrained contexts
 - Border radius: 2px
-- Disabled states: #f0f0f0 background, #949494 text
+- Disabled states: transparent background, #949494 text
 
 **Files to modify:**
 - `src/wp-admin/css/colors/_admin.scss` (L40-L150)
@@ -125,14 +126,18 @@ npm run build
 **Branch:** `admin-reskin/inputs`
 
 **Scope:**
-- Text inputs: 32px height, 2px radius, #949494 border
-- Focus state: 1.5px #4465db inner ring
+- Default input height: 40px (aligned with Gutenberg's next-default-40px)
+- Compact inputs: 32px for space-constrained contexts
+- Border radius: 2px
+- Border: 1px #949494
+- Focus state: Gutenberg-style outer ring with var(--wp-admin-theme-color)
 - Disabled: #f0f0f0 background, #cccccc border
 - Readonly: #f0f0f0 background
 - Checkboxes: 16px, theme color when checked
 - Radio buttons: 16px, theme color when selected
 - Select dropdowns: match text input styling
 - Textareas: consistent border and focus styling
+- Use `min-height` + `line-height` for sizing (not fixed `height`) for accessibility
 
 **Files to modify:**
 - `src/wp-admin/css/forms.css` (L34-L200, L825+)
@@ -266,7 +271,7 @@ npm run build
 
 ---
 
-### Ticket 3.2: Admin Menu Reskin (Optional)
+### Ticket 3.2: Admin Menu Reskin
 
 **Branch:** `admin-reskin/admin-menu`
 
@@ -296,7 +301,7 @@ npm run build
 
 ---
 
-### Ticket 3.3: Admin Bar Reskin (Optional)
+### Ticket 3.3: Admin Bar Reskin
 
 **Branch:** `admin-reskin/admin-bar`
 
