@@ -3,7 +3,7 @@
 # Show sync status for forked stylesheets
 #
 # This script shows the current synchronization status between the forked
-# stylesheets and WordPress core.
+# stylesheets and WordPress core, including new and deleted files.
 #
 # Usage: npm run sync:status
 #        or: bash scripts/sync-status.sh
@@ -76,9 +76,14 @@ echo "  Last sync commit: $LAST_SYNC"
 echo "  Last sync date: $LAST_SYNC_DATE"
 echo ""
 
+# Define tracked directories
+TRACKED_DIRS=(
+    "src/wp-admin/css"
+    "src/wp-includes/css"
+)
+
 if [ "$LAST_SYNC" == "$CURRENT_COMMIT" ]; then
     echo -e "${GREEN}Status: UP TO DATE${NC}"
-    echo ""
 else
     # Count commits behind
     COMMITS_BEHIND=$(git rev-list --count "$LAST_SYNC".."$CURRENT_COMMIT" 2>/dev/null || echo "unknown")
@@ -90,17 +95,14 @@ else
     echo -e "${BLUE}Changed files in core since last sync:${NC}"
     
     cd "$PLUGIN_DIR"
-    
-    # Get list of tracked paths
     TRACKED_PATHS=$(jq -r '.files | keys[]' "$MAPPING_FILE")
-    
     cd "$CORE_PATH"
     
     CHANGED=0
     for core_path in $TRACKED_PATHS; do
         CHANGES=$(git diff --name-only "$LAST_SYNC".."$CURRENT_COMMIT" -- "$core_path" 2>/dev/null || echo "")
         if [ -n "$CHANGES" ]; then
-            echo "  - $core_path"
+            echo "  M $core_path"
             ((CHANGED++)) || true
         fi
     done
@@ -108,30 +110,108 @@ else
     if [ "$CHANGED" -eq 0 ]; then
         echo "  (no changes in tracked files)"
     fi
-    
-    echo ""
-    echo "Run 'npm run sync:update' to pull changes."
-    echo "Run 'npm run sync:update -- --dry-run' to preview changes first."
 fi
 
-cd "$PLUGIN_DIR"
-
-# Count forked files
+# Check for new files in core
 echo ""
-echo -e "${BLUE}Forked Files:${NC}"
+echo -e "${BLUE}New files in core (not in mapping):${NC}"
 
-TOTAL_TRACKED=$(jq '.files | length' "$MAPPING_FILE")
-FORKED=0
-
-jq -r '.files | to_entries[] | .value.plugin' "$MAPPING_FILE" | while read -r plugin_path; do
-    if [ -f "$PLUGIN_DIR/$plugin_path" ]; then
-        ((FORKED++)) || true
+NEW_IN_CORE=0
+for dir in "${TRACKED_DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+        find "$dir" -type f \( -name "*.css" -o -name "*.scss" \) | while read -r core_file; do
+            cd "$PLUGIN_DIR"
+            if ! jq -e --arg path "$core_file" '.files[$path]' "$MAPPING_FILE" > /dev/null 2>&1; then
+                # Check if file was added after last sync
+                cd "$CORE_PATH"
+                if [ "$LAST_SYNC" != "$CURRENT_COMMIT" ]; then
+                    FILE_ADDED=$(git log --oneline "$LAST_SYNC".."$CURRENT_COMMIT" --diff-filter=A -- "$core_file" 2>/dev/null | head -1)
+                    if [ -n "$FILE_ADDED" ]; then
+                        echo "  + $core_file (new since last sync)"
+                        ((NEW_IN_CORE++)) || true
+                    fi
+                fi
+            fi
+            cd "$CORE_PATH"
+        done
     fi
 done
 
-# Count files that exist
-FORKED=$(find "$PLUGIN_DIR/core-styles" -name "*.css" -o -name "*.scss" 2>/dev/null | wc -l | tr -d ' ')
+if [ "$NEW_IN_CORE" -eq 0 ]; then
+    echo "  (none)"
+fi
+
+# Check for deleted files in core
+echo ""
+echo -e "${BLUE}Deleted files in core (still in mapping):${NC}"
+
+cd "$PLUGIN_DIR"
+DELETED_IN_CORE=0
+
+jq -r '.files | keys[]' "$MAPPING_FILE" | while read -r core_path; do
+    cd "$CORE_PATH"
+    if [ ! -f "$core_path" ]; then
+        echo "  - $core_path"
+        ((DELETED_IN_CORE++)) || true
+    fi
+    cd "$PLUGIN_DIR"
+done
+
+if [ "$DELETED_IN_CORE" -eq 0 ]; then
+    echo "  (none)"
+fi
+
+# Check for new files in plugin not in mapping
+echo ""
+echo -e "${BLUE}New files in plugin (not in mapping):${NC}"
+
+cd "$PLUGIN_DIR"
+NEW_IN_PLUGIN=0
+
+find "$PLUGIN_DIR/core-styles" -type f \( -name "*.css" -o -name "*.scss" \) 2>/dev/null | while read -r plugin_file; do
+    plugin_path="${plugin_file#$PLUGIN_DIR/}"
+    # Convert to core path
+    core_path="src/${plugin_path#core-styles/}"
+    
+    if ! jq -e --arg path "$core_path" '.files[$path]' "$MAPPING_FILE" > /dev/null 2>&1; then
+        echo "  + $plugin_path"
+        ((NEW_IN_PLUGIN++)) || true
+    fi
+done
+
+if [ "$NEW_IN_PLUGIN" -eq 0 ]; then
+    echo "  (none)"
+fi
+
+# Check for missing files in plugin (in mapping but not on disk)
+echo ""
+echo -e "${BLUE}Missing files in plugin (in mapping but deleted):${NC}"
+
+MISSING_IN_PLUGIN=0
+jq -r '.files | to_entries[] | .value.plugin' "$MAPPING_FILE" | while read -r plugin_path; do
+    if [ ! -f "$PLUGIN_DIR/$plugin_path" ]; then
+        echo "  - $plugin_path"
+        ((MISSING_IN_PLUGIN++)) || true
+    fi
+done
+
+if [ "$MISSING_IN_PLUGIN" -eq 0 ]; then
+    echo "  (none)"
+fi
+
+# File counts
+echo ""
+echo -e "${BLUE}File Counts:${NC}"
+
+TOTAL_TRACKED=$(jq '.files | length' "$MAPPING_FILE")
+FORKED=$(find "$PLUGIN_DIR/core-styles" -type f \( -name "*.css" -o -name "*.scss" \) 2>/dev/null | wc -l | tr -d ' ')
 
 echo "  Tracked in mapping: $TOTAL_TRACKED"
-echo "  Actually forked: $FORKED"
+echo "  Files in core-styles: $FORKED"
 
+# Next steps
+echo ""
+if [ "$LAST_SYNC" != "$CURRENT_COMMIT" ]; then
+    echo "Run 'npm run sync:update' to pull changes from core."
+    echo "Run 'npm run sync:update -- --dry-run' to preview changes first."
+fi

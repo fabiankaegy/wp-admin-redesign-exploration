@@ -106,8 +106,119 @@ UPDATED=0
 CONFLICTS=0
 UNCHANGED=0
 SKIPPED=0
+ADDED=0
+DELETED=0
 
-# Process each file in mapping
+# Define tracked directories (relative to core source dir)
+TRACKED_DIRS=(
+    "src/wp-admin/css"
+    "src/wp-includes/css"
+)
+
+# Function to get handle from path
+get_handle_from_path() {
+    local path="$1"
+    local filename=$(basename "$path" .css)
+    filename=$(basename "$filename" .scss)
+    # Remove -rtl suffix
+    filename="${filename%-rtl}"
+    echo "$filename"
+}
+
+# Function to get plugin path from core path
+core_to_plugin_path() {
+    local core_path="$1"
+    # Remove 'src/' prefix and add 'core-styles/' prefix
+    echo "core-styles/${core_path#src/}"
+}
+
+echo -e "${BLUE}=== Checking for new files in core ===${NC}"
+echo ""
+
+# Check for new files in core that aren't in our mapping
+cd "$CORE_PATH"
+for dir in "${TRACKED_DIRS[@]}"; do
+    if [ -d "$dir" ]; then
+        # Find all CSS and SCSS files
+        find "$dir" -type f \( -name "*.css" -o -name "*.scss" \) | while read -r core_file; do
+            # Check if this file is in our mapping
+            if ! jq -e --arg path "$core_file" '.files[$path]' "$MAPPING_FILE" > /dev/null 2>&1; then
+                # Check if file was added after last sync
+                FILE_ADDED=$(git log --oneline "$LAST_SYNC".."$CURRENT_COMMIT" --diff-filter=A -- "$core_file" 2>/dev/null | head -1)
+                
+                if [ -n "$FILE_ADDED" ]; then
+                    plugin_path=$(core_to_plugin_path "$core_file")
+                    handle=$(get_handle_from_path "$core_file")
+                    
+                    echo -e "${GREEN}NEW${NC}: $core_file"
+                    
+                    if [ "$DRY_RUN" = false ]; then
+                        # Create directory if needed
+                        mkdir -p "$PLUGIN_DIR/$(dirname "$plugin_path")"
+                        
+                        # Copy the file
+                        cp "$CORE_PATH/$core_file" "$PLUGIN_DIR/$plugin_path"
+                        
+                        # Add to mapping
+                        cd "$PLUGIN_DIR"
+                        TEMP_MAPPING=$(mktemp)
+                        jq --arg core "$core_file" \
+                           --arg plugin "$plugin_path" \
+                           --arg handle "$handle" \
+                           '.files[$core] = {"plugin": $plugin, "handle": $handle}' \
+                           "$MAPPING_FILE" > "$TEMP_MAPPING"
+                        mv "$TEMP_MAPPING" "$MAPPING_FILE"
+                        cd "$CORE_PATH"
+                        
+                        echo "  Added to plugin and mapping"
+                    fi
+                    ((ADDED++)) || true
+                fi
+            fi
+        done
+    fi
+done
+
+echo ""
+echo -e "${BLUE}=== Checking for deleted files in core ===${NC}"
+echo ""
+
+cd "$PLUGIN_DIR"
+
+# Check for files in our mapping that were deleted in core
+jq -r '.files | keys[]' "$MAPPING_FILE" | while read -r core_path; do
+    plugin_path=$(jq -r --arg path "$core_path" '.files[$path].plugin' "$MAPPING_FILE")
+    
+    # Check if file was deleted in core after last sync
+    cd "$CORE_PATH"
+    FILE_DELETED=$(git log --oneline "$LAST_SYNC".."$CURRENT_COMMIT" --diff-filter=D -- "$core_path" 2>/dev/null | head -1)
+    
+    if [ -n "$FILE_DELETED" ]; then
+        echo -e "${RED}DELETED${NC}: $core_path"
+        
+        if [ "$DRY_RUN" = false ]; then
+            # Remove from plugin
+            if [ -f "$PLUGIN_DIR/$plugin_path" ]; then
+                rm "$PLUGIN_DIR/$plugin_path"
+                echo "  Removed from plugin"
+            fi
+            
+            # Remove from mapping
+            cd "$PLUGIN_DIR"
+            TEMP_MAPPING=$(mktemp)
+            jq --arg path "$core_path" 'del(.files[$path])' "$MAPPING_FILE" > "$TEMP_MAPPING"
+            mv "$TEMP_MAPPING" "$MAPPING_FILE"
+        fi
+        ((DELETED++)) || true
+    fi
+    cd "$PLUGIN_DIR"
+done
+
+echo ""
+echo -e "${BLUE}=== Processing modified files ===${NC}"
+echo ""
+
+# Process each file in mapping for updates
 jq -r '.files | to_entries[] | "\(.key)|\(.value.plugin)"' "$MAPPING_FILE" | while IFS='|' read -r core_path plugin_path; do
     plugin_file="$PLUGIN_DIR/$plugin_path"
     
@@ -128,6 +239,11 @@ jq -r '.files | to_entries[] | "\(.key)|\(.value.plugin)"' "$MAPPING_FILE" | whi
         # No changes in core
         ((UNCHANGED++)) || true
         continue
+    fi
+    
+    # Check if file still exists in core (not deleted)
+    if [ ! -f "$CORE_PATH/$core_path" ]; then
+        continue  # Already handled in deleted files section
     fi
     
     echo -e "${BLUE}Processing${NC}: $core_path"
@@ -183,6 +299,8 @@ cd "$PLUGIN_DIR"
 
 echo ""
 echo "Sync summary:"
+echo "  New files added: $ADDED"
+echo "  Files deleted: $DELETED"
 echo "  Updated: $UPDATED"
 echo "  Conflicts: $CONFLICTS"
 echo "  Unchanged: $UNCHANGED"
@@ -204,7 +322,7 @@ if [ "$CONFLICTS" -gt 0 ]; then
 fi
 
 # Update lastSyncCommit if no conflicts
-if [ "$UPDATED" -gt 0 ] || [ "$UNCHANGED" -gt 0 ]; then
+if [ "$UPDATED" -gt 0 ] || [ "$UNCHANGED" -gt 0 ] || [ "$ADDED" -gt 0 ] || [ "$DELETED" -gt 0 ]; then
     TEMP_FILE=$(mktemp)
     jq --arg commit "$CURRENT_COMMIT" '.lastSyncCommit = $commit' "$MAPPING_FILE" > "$TEMP_FILE"
     mv "$TEMP_FILE" "$MAPPING_FILE"
@@ -213,4 +331,3 @@ fi
 
 echo ""
 echo -e "${GREEN}Sync complete!${NC}"
-

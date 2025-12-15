@@ -151,6 +151,11 @@ npm run sync:update -- --dry-run # Preview without making changes
 npm run sync:update -- --force   # Overwrite local changes with core
 ```
 
+The sync:update command automatically:
+- **Detects new files** added to core since last sync and adds them to the plugin
+- **Detects deleted files** removed from core since last sync and removes them from the plugin
+- **Updates the mapping** when files are added or removed
+
 #### `sync:to-core`
 
 ```bash
@@ -159,7 +164,18 @@ npm run sync:to-core -- --dry-run              # Preview what would be copied
 npm run sync:to-core -- --diff                 # Show diffs of changes
 npm run sync:to-core -- --changed-only         # Only copy modified files
 npm run sync:to-core -- --branch feature-name  # Create branch in core first
+npm run sync:to-core -- --include-new          # Also copy new files not yet in core
+npm run sync:to-core -- --include-deleted      # Also delete files removed from plugin
 ```
+
+#### `sync:status`
+
+The status command reports on:
+- Modified files in core since last sync
+- New files in core not yet in the mapping
+- Deleted files in core that are still in the mapping
+- New files in the plugin not yet in the mapping
+- Missing files in the plugin (in mapping but deleted locally)
 
 ## Development Workflow
 
