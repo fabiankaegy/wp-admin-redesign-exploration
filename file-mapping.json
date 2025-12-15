@@ -270,6 +270,10 @@
     "src/wp-includes/css/media-views-rtl.css": {
       "plugin": "core-styles/wp-includes/css/media-views-rtl.css",
       "handle": "media-views"
+    },
+    "src/wp-admin/css/colors/_tokens.scss": {
+      "plugin": "core-styles/wp-admin/css/colors/_tokens.scss",
+      "handle": "_tokens"
     }
   }
 }
