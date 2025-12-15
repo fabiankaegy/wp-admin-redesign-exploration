@@ -290,26 +290,41 @@ Each scheme includes:
 
 The color schemes use SCSS. The SCSS files are the source of truth and are synced just like CSS files.
 
+### Building SCSS in the Plugin
+
+The plugin includes build scripts that mirror WordPress core's SCSS compilation:
+
+```bash
+# Build all color schemes (SCSS → CSS + RTL)
+npm run build
+
+# Build only CSS (no RTL generation)
+npm run build:colors
+
+# Watch for SCSS changes during development
+npm run watch
+```
+
+The build process:
+1. **Sass** compiles `.scss` files to `.css` (using dart-sass)
+2. **RTLCSS** generates `-rtl.css` variants for RTL languages
+
 ### Workflow for SCSS Changes
 
 1. Edit the SCSS files in `core-styles/wp-admin/css/colors/`
-2. Sync back to core: `npm run sync:to-core`
-3. Run the WordPress core build to compile:
-   ```bash
-   cd ../wordpress-develop
-   npm run build:css
-   ```
-4. The compiled CSS will be regenerated in core
-5. Run `npm run sync:init` to pull the compiled CSS back into the plugin
+2. Build locally: `npm run build`
+3. Test in the WP admin
+4. When ready, sync back to core: `npm run sync:to-core`
 
-### Quick Iteration
+### Quick Development
 
-For quick visual iteration, you can edit the compiled CSS directly in the plugin. When ready to finalize:
+For active development, run the watch command:
 
-1. Port your CSS changes back to the SCSS source files
-2. Sync SCSS to core
-3. Build in core to verify compilation works
-4. Sync the compiled CSS back to the plugin
+```bash
+npm run watch
+```
+
+This will automatically recompile SCSS files when they change. Note that `watch` only compiles CSS, not RTL variants. Run `npm run build` before final testing or syncing to core.
 
 ## Troubleshooting
 

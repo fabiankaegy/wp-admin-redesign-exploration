@@ -1,17 +1,13 @@
 {
 	"name": "wp-admin-redesign-exploration",
 	"version": "1.0.0",
+	"description": "Exploratory plugin for WordPress admin visual refresh using forked core stylesheets.",
 	"scripts": {
-		"start": "npm run watch",
-		"watch": "10up-toolkit watch --port=5015",
-		"build": "10up-toolkit build",
-		"format-js": "10up-toolkit format-js",
-		"lint-js": "10up-toolkit lint-js",
-		"lint-style": "10up-toolkit lint-style",
-		"test": "10up-toolkit test-unit-jest",
-		"clean-dist": "rm -rf ./dist",
-		"scaffold:block": "cd includes/blocks/ && wp-create-block --no-plugin --template ../../../../bin/create-block-template",
 		"wp-env": "wp-env",
+		"build:colors": "sass core-styles/wp-admin/css/colors/modern/colors.scss:core-styles/wp-admin/css/colors/modern/colors.css core-styles/wp-admin/css/colors/light/colors.scss:core-styles/wp-admin/css/colors/light/colors.css core-styles/wp-admin/css/colors/blue/colors.scss:core-styles/wp-admin/css/colors/blue/colors.css core-styles/wp-admin/css/colors/coffee/colors.scss:core-styles/wp-admin/css/colors/coffee/colors.css core-styles/wp-admin/css/colors/ectoplasm/colors.scss:core-styles/wp-admin/css/colors/ectoplasm/colors.css core-styles/wp-admin/css/colors/midnight/colors.scss:core-styles/wp-admin/css/colors/midnight/colors.css core-styles/wp-admin/css/colors/ocean/colors.scss:core-styles/wp-admin/css/colors/ocean/colors.css core-styles/wp-admin/css/colors/sunrise/colors.scss:core-styles/wp-admin/css/colors/sunrise/colors.css --style=expanded --no-source-map",
+		"build:colors:rtl": "rtlcss core-styles/wp-admin/css/colors/modern/colors.css core-styles/wp-admin/css/colors/modern/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/light/colors.css core-styles/wp-admin/css/colors/light/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/blue/colors.css core-styles/wp-admin/css/colors/blue/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/coffee/colors.css core-styles/wp-admin/css/colors/coffee/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/ectoplasm/colors.css core-styles/wp-admin/css/colors/ectoplasm/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/midnight/colors.css core-styles/wp-admin/css/colors/midnight/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/ocean/colors.css core-styles/wp-admin/css/colors/ocean/colors-rtl.css && rtlcss core-styles/wp-admin/css/colors/sunrise/colors.css core-styles/wp-admin/css/colors/sunrise/colors-rtl.css",
+		"build": "npm run build:colors && npm run build:colors:rtl",
+		"watch": "sass --watch core-styles/wp-admin/css/colors/modern/colors.scss:core-styles/wp-admin/css/colors/modern/colors.css core-styles/wp-admin/css/colors/light/colors.scss:core-styles/wp-admin/css/colors/light/colors.css core-styles/wp-admin/css/colors/blue/colors.scss:core-styles/wp-admin/css/colors/blue/colors.css core-styles/wp-admin/css/colors/coffee/colors.scss:core-styles/wp-admin/css/colors/coffee/colors.css core-styles/wp-admin/css/colors/ectoplasm/colors.scss:core-styles/wp-admin/css/colors/ectoplasm/colors.css core-styles/wp-admin/css/colors/midnight/colors.scss:core-styles/wp-admin/css/colors/midnight/colors.css core-styles/wp-admin/css/colors/ocean/colors.scss:core-styles/wp-admin/css/colors/ocean/colors.css core-styles/wp-admin/css/colors/sunrise/colors.scss:core-styles/wp-admin/css/colors/sunrise/colors.css --style=expanded --no-source-map",
 		"capture:admin-pages": "node scripts/capture-admin-pages.js",
 		"capture:screenshots": "node scripts/capture-screenshots.js",
 		"capture:real": "node scripts/capture-real-screenshots.js",
@@ -26,26 +22,16 @@
 	},
 	"dependencies": {
 		"@wordpress/env": "^10.16.0",
-		"10up-toolkit": "^6.4.0",
-		"playwright": "^1.57.0"
+		"playwright": "^1.57.0",
+		"rtlcss": "^4.3.0",
+		"sass": "^1.83.0"
 	},
-	"10up-toolkit": {
-		"useBlockAssets": true,
-		"useScriptModules": true,
-		"entry": {
-			"admin-redesign": "./assets/css/admin-redesign.css",
-			"admin-enhancements": "./assets/js/admin-enhancements.js"
-		}
-	},
-	"description": "Contributors: fabiankaegy Requires at least: 6.7 Tested up to: 6.7.1 Stable tag: 0.1.0 Requires PHP: 8.0 License: GPLv2 or later License URI: <https://www.gnu.org/licenses/gpl-2.0.html>",
-	"main": "capture-screenshots.js",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/fabiankaegy/wp-admin-redesign-exploration.git"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Fabian Kägy",
+	"license": "GPL-2.0-or-later",
 	"bugs": {
 		"url": "https://github.com/fabiankaegy/wp-admin-redesign-exploration/issues"
 	},

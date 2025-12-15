@@ -35,8 +35,8 @@ npm install
 # (On first run, you'll be prompted to configure the core repo path)
 npm run sync:init
 
-# Start development
-npm start
+# Start local WordPress environment
+npm run wp-env start
 ```
 
 ### Environment Configuration
@@ -87,9 +87,8 @@ For detailed documentation, see [docs/core-styles-forking.md](docs/core-styles-f
 
 ```
 ├── core-styles/          # Forked WordPress core stylesheets
-│   ├── wp-admin/css/     # Admin CSS (common, forms, etc.)
+│   ├── wp-admin/css/     # Admin CSS (common, forms, colors, etc.)
 │   └── wp-includes/css/  # Includes CSS (buttons, admin-bar)
-├── assets/               # Additional plugin styles/scripts
 ├── includes/             # PHP includes
 │   └── style-overrides.php
 ├── scripts/              # Sync scripts
@@ -97,12 +96,32 @@ For detailed documentation, see [docs/core-styles-forking.md](docs/core-styles-f
 └── docs/                 # Documentation
 ```
 
+## Building SCSS
+
+The color scheme stylesheets use SCSS. After editing any `.scss` file in `core-styles/wp-admin/css/colors/`, you need to compile them:
+
+```bash
+# Build all color schemes (SCSS → CSS + RTL)
+npm run build
+
+# Build only CSS (no RTL)
+npm run build:colors
+
+# Watch for SCSS changes during development
+npm run watch
+```
+
+The build process mimics WordPress core:
+1. **Sass** compiles `.scss` to `.css`
+2. **RTLCSS** generates `-rtl.css` variants
+
 ## Development Workflow
 
 1. Edit CSS files in `core-styles/`
-2. Changes load automatically in WP admin
-3. Periodically run `sync:update` to pull upstream changes
-4. When ready, use `sync:to-core` to copy changes back
+2. For SCSS changes, run `npm run build` (or `npm run watch` for live compilation)
+3. Changes load automatically in WP admin
+4. Periodically run `sync:update` to pull upstream changes
+5. When ready, use `sync:to-core` to copy changes back
 
 ## Requirements Documentation
 
