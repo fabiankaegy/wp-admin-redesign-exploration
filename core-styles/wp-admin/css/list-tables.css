@@ -1,3 +1,8 @@
+/* List tables use transparent background for DataViews alignment */
+.wp-list-table {
+	background: transparent;
+}
+
 .response-links {
 	display: block;
 	margin-bottom: 1em;
@@ -240,12 +245,17 @@
 
 #the-comment-list th,
 #the-comment-list td {
-	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	border-top: 1px solid #f0f0f0;
+}
+
+#the-comment-list tr:first-child th,
+#the-comment-list tr:first-child td {
+	border-top: none;
 }
 
 #the-comment-list tr:last-child th,
 #the-comment-list tr:last-child td {
-	box-shadow: none;
+	border-bottom: none;
 }
 
 #the-comment-list tr.unapproved + tr.approved th,
@@ -258,6 +268,35 @@
 .vim-current th,
 .vim-current td {
 	background-color: #f0f6fc !important;
+}
+
+/* Row separators - subtle bottom border like DataViews */
+.wp-list-table tbody tr td,
+.wp-list-table tbody tr th {
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Remove border from last row */
+.wp-list-table tbody tr:last-child td,
+.wp-list-table tbody tr:last-child th {
+	border-bottom: none;
+}
+
+/* Table row hover states */
+.wp-list-table tbody tr:hover td,
+.wp-list-table tbody tr:hover th,
+.wp-list-table tbody tr:focus-within td,
+.wp-list-table tbody tr:focus-within th {
+	background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Table row selected states */
+.wp-list-table tbody tr.selected td,
+.wp-list-table tbody tr.selected th,
+.wp-list-table tbody tr[aria-selected="true"] td,
+.wp-list-table tbody tr[aria-selected="true"] th {
+	background-color: rgba(var(--wp-admin-theme-color--rgb), 0.04);
 }
 
 th .comment-grey-bubble {
@@ -354,7 +393,8 @@ td.column-title strong,
 td.plugin-title strong {
 	display: block;
 	margin-bottom: .2em;
-	font-size: 14px;
+	font-size: 13px;
+	font-weight: 500;
 }
 
 td.column-title p,
@@ -404,6 +444,8 @@ table.media .column-title .filename {
 .wp-list-table a {
 	transition: none;
 }
+
+/* Keep default link colors for primary links */
 
 #the-list tr:last-child td,
 #the-list tr:last-child th {
@@ -496,11 +538,11 @@ table.media .column-title .filename {
 }
 
 th.sorted.desc .sorting-indicator.desc:before {
-	color: #1d2327;
+	color: var(--wp-admin-theme-color);
 }
 
 th.sorted.asc .sorting-indicator.asc:before {
-	color: #1d2327;
+	color: var(--wp-admin-theme-color);
 }
 
 th.sorted.asc a:focus .sorting-indicator.asc:before,
@@ -514,7 +556,7 @@ th.sorted.asc a:focus .sorting-indicator.desc:before,
 th.sorted.asc:hover .sorting-indicator.desc:before,
 th.sorted.desc a:focus .sorting-indicator.asc:before,
 th.sorted.desc:hover .sorting-indicator.asc:before {
-	color: #1d2327;
+	color: var(--wp-admin-theme-color);
 }
 
 .wp-list-table .toggle-row {
@@ -583,12 +625,12 @@ th.sorted.desc:hover .sorting-indicator.asc:before {
 }
 
 .check-column .label-covers-full-cell:hover + input:not(:disabled) {
-	box-shadow: 0 0 0 1px #2271b1;
+	box-shadow: 0 0 0 1px var(--wp-admin-theme-color);
 }
 
 .check-column label:hover,
 .check-column input:hover + label {
-	background: rgba(0, 0, 0, 0.05);
+	background: rgba(0, 0, 0, 0.02);
 }
 
 .locked-indicator {
@@ -660,7 +702,10 @@ th.sorted a span {
 
 .tablenav-pages .current-page {
 	margin: 0 2px 0 0;
+	min-height: 32px;
+	padding: 0 8px;
 	font-size: 13px;
+	line-height: 2.3; /* ~30px for 32px height */
 	text-align: center;
 }
 
@@ -675,7 +720,7 @@ th.sorted a span {
 .tablenav {
 	clear: both;
 	height: 30px;
-	margin: 6px 0 4px;
+	margin: 6px 0 16px;
 	padding-top: 5px;
 	vertical-align: middle;
 }
@@ -698,12 +743,12 @@ th.sorted a span {
 .tablenav .tablenav-pages .tablenav-pages-navspan {
 	display: inline-block;
 	vertical-align: baseline;
-	min-width: 30px;
-	min-height: 30px;
+	min-width: 32px;
+	min-height: 32px;
 	margin: 0;
-	padding: 0 4px;
-	font-size: 16px;
-	line-height: 1.625; /* 26px */
+	padding: 0 8px;
+	font-size: 13px;
+	line-height: 2.3; /* ~30px for 32px height */
 	text-align: center;
 }
 
@@ -824,8 +869,8 @@ p.pagenav {
 }
 
 .row-title {
-	font-size: 14px !important;
-	font-weight: 600;
+	font-size: 13px !important;
+	font-weight: 500;
 }
 
 .column-comment .comment-author {

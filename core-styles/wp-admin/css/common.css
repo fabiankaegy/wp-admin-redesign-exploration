@@ -187,7 +187,6 @@
 #menu-settings-column .accordion-container,
 #menu-management .menu-edit,
 .manage-menus,
-table.widefat,
 .stuffbox,
 p.popular-tags,
 .widgets-holder-wrap,
@@ -197,6 +196,12 @@ p.popular-tags,
 .comment-ays {
 	border: 1px solid #c3c4c7;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Remove border and shadow from tables for clean DataViews look */
+table.widefat {
+	border: none;
+	box-shadow: none;
 }
 
 table.widefat,
@@ -444,7 +449,7 @@ code {
 
 .subsubsub a .count,
 .subsubsub a.current .count {
-	color: #50575e; /* #f1f1f1 background */
+	color: #5d5d5d;
 	font-weight: 400;
 }
 
@@ -479,18 +484,30 @@ code {
 
 .widefat td,
 .widefat th {
-	padding: 8px 10px;
+	padding: 12px 12px;
 }
 
 .widefat thead th,
 .widefat thead td {
-	border-bottom: 1px solid #c3c4c7;
+	border-bottom: 1px solid #dddddd;
+	background: transparent;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	padding-top: 8px;
+	padding-bottom: 8px;
 }
 
 .widefat tfoot th,
 .widefat tfoot td {
-	border-top: 1px solid #c3c4c7;
+	border-top: 1px solid #dddddd;
 	border-bottom: none;
+	background: transparent;
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0;
 }
 
 .widefat .no-items td {
@@ -540,12 +557,14 @@ code {
 .widefat tbody th.check-column,
 .updates-table tbody td.check-column,
 .widefat tfoot td.check-column {
-	padding: 11px 0 0 3px;
+	padding: 12px 8px;
+	width: 2.5em;
 }
 
 .widefat thead td.check-column,
 .widefat tfoot td.check-column {
-	padding-top: 4px;
+	padding-top: 8px;
+	padding-bottom: 8px;
 	vertical-align: middle;
 }
 
@@ -697,10 +716,11 @@ div#widgets-right .widget-top:hover,
 	color: #000;
 }
 
+/* Remove striped backgrounds for clean DataViews look */
 .striped > tbody > :nth-child(odd),
 ul.striped > :nth-child(odd),
 .alternate {
-	background-color: #f6f7f7;
+	background-color: transparent;
 }
 
 .bar {
@@ -2079,7 +2099,7 @@ html.wp-toolbar {
 
 .widefat th,
 .widefat td {
-	color: #50575e;
+	color: #757575;
 }
 
 .widefat th,
