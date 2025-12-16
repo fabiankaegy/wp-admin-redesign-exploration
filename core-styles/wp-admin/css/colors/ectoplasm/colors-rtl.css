@@ -14,7 +14,7 @@
  * may use the function in their own admin CSS files. See #56811.
  */
 body {
-  background: #f0f0f0;
+  background: #ffffff;
 }
 
 /* Links */
@@ -347,8 +347,8 @@ input[type=radio]:focus {
 .about-wrap .nav-tab-active,
 .nav-tab-active,
 .nav-tab-active:hover {
-  background-color: #f0f0f0;
-  border-bottom-color: #f0f0f0;
+  background-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
 /* Admin Menu: submenu */
@@ -400,7 +400,7 @@ input[type=radio]:focus {
 
 ul#adminmenu a.wp-has-current-submenu:after,
 ul#adminmenu > li.current > a.current:after {
-  border-left-color: #f0f0f0;
+  border-left-color: #ffffff;
 }
 
 #adminmenu li.current a.menu-top,

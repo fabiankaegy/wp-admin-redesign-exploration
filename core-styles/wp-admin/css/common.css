@@ -10,6 +10,7 @@
 #wpcontent {
 	height: 100%;
 	padding-left: 20px;
+	background: #ffffff;
 }
 
 #wpcontent,
@@ -224,7 +225,7 @@ body {
 }
 
 body {
-	background: #f0f0f1;
+	background: #f0f0f0;
 	color: #3c434a;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	font-size: 13px;
